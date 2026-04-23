@@ -2,7 +2,7 @@ name: Deploy to VPS
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   deploy:
@@ -21,6 +21,6 @@ jobs:
           script: |
             cd /var/www/goclaw-cham
             git fetch origin
-            git reset --hard origin/main
+            git reset --hard origin/master
             npm install
             pm2 restart goclaw
